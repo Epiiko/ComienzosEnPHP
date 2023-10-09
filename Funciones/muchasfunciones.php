@@ -47,7 +47,6 @@ function salarioIrpf(float $salario): float
         $salariof -= 300000;
         $devengo += ($salariof * 0.45);
     }
-    echo $devengo . "<br>";
     return $salario - $devengo;
 }
 function asignarNota(int $nota)
