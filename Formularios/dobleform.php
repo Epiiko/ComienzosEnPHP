@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <LINK REL=StyleSheet HREF="estilo.css" TYPE="text/css">
-    <?php require "funcionIVA.php"; ?>
+    <?php require "../Funciones/muchasfunciones.php"; ?>
 
 </head>
 
@@ -41,45 +41,6 @@
         </form>
     </fieldset>
     <br><br>
-    <?php
-    function salarioIrpf(float $salario): float
-    {
-        $devengo = 0;
-        $salariof = $salario;
-        if ($salariof < 12.450) {
-            $devengo += ($salariof * 0.19);
-        } else if ($salariof < 20.200) {
-            $devengo += (12450 * 0.19);
-            $salariof -= 12450;
-            $devengo += ($salariof * 0.24);
-        } else if ($salariof < 35200) {
-            $devengo += (12450 * 0.19);
-            $salariof -= 12450;
-            $devengo += (20200 * 0.24);
-            $salariof -= 20200;
-            $devengo += ($salariof * 0.3);
-        } else if ($salariof < 60000) {
-            $devengo += (12450 * 0.19);
-            $salariof -= 12450;
-            $devengo += (20200 * 0.24);
-            $salariof -= 20200;
-            $devengo += (35200 * 0.3);
-            $salariof -= 35200;
-            $devengo += ($salariof * 0.37);
-        } else if ($salariof > 300000) {
-            $devengo += (12450 * 0.19);
-            $salariof -= 12450;
-            $devengo += (20200 * 0.24);
-            $salariof -= 20200;
-            $devengo += (35200 * 0.3);
-            $salariof -= 35200;
-            $devengo += ($salariof * 0.37);
-            $salariof -= 300000;
-            $devengo += ($salariof * 0.45);
-        }
-        return $salario - $devengo;
-    }
-    ?>
     <fieldset>
         <legend>IRPF</legend>
         <form action="" method="post">
