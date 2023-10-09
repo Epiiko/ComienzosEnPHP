@@ -1,0 +1,27 @@
+.root{
+    --negro: rgb(12, 11, 11);
+}
+*{
+    background-color: var(--negro);
+}
+
+body{
+    font:italic;
+    color:var(--negro);
+    background-color:rgb(255, 255, 255); 
+}
+caption{
+    color: rgb(255, 255, 255);
+}
+th,td{
+border : 1px solid;
+}
+th{
+    color: red;
+}
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+}
+
