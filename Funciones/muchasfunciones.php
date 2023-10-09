@@ -108,3 +108,4 @@ function primos(int $cantidad)
         }
     }
 }
+?>
