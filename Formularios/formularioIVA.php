@@ -24,7 +24,7 @@
             <br><br>
             <button type="Sumbit">Enviar</button>
         </form>
-        <?php require 'funcionIVA.php';
+        <?php require '../Funciones/muchasfunciones.php';
          if (($_SERVER["REQUEST_METHOD"]) == "POST") {
             $precio = (int)$_POST["precio"];
             $tipoiva = (String)$_POST["tipo"];
