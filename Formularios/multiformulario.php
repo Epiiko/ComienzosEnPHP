@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <LINK REL=StyleSheet HREF="estilo.css" TYPE="text/css">
+    <LINK REL=StyleSheet HREF="estilo2.css" TYPE="text/css">
     <?php require "../Funciones/muchasfunciones.php"; ?>
 
 </head>
