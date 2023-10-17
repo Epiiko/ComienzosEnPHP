@@ -108,4 +108,7 @@ function primos(int $cantidad)
         }
     }
 }
+function depurar($entrada){
+    return trim(htmlspecialchars($entrada));
+}
 ?>

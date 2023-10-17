@@ -128,8 +128,7 @@
     </table>
     <h1>Ejercicio IVA</h1>
     <?php
-    function precioConIva(float $precio, string $iva): float
-    {
+    function precioConIva(float $precio, string $iva): float{
         $total = 0;
         $ivanumerico = 0;
         $iva = strtoupper($iva);
@@ -157,47 +156,7 @@
     echo precioSinIva(precioConIva(100, "reducido"), "reducido");
     ?>
     <h1>Ejercicio RPF</h1>
-    <?php
-    function salarioIrpf(float $salario): float
-    {
-        $devengo = 0;
-        $salariof = $salario;
-        if ($salariof < 12.450) {
-            $devengo += ($salariof * 0.19);
-        } else if ($salariof < 20.200) {
-            $devengo += (12450 * 0.19);
-            $salariof -= 12450;
-            $devengo += ($salariof * 0.24);
-        } else if ($salariof < 35200) {
-            $devengo += (12450 * 0.19);
-            $salariof -= 12450;
-            $devengo += (20200 * 0.24);
-            $salariof -= 20200;
-            $devengo += ($salariof * 0.3);
-        } else if ($salariof < 60000) {
-            $devengo += (12450 * 0.19);
-            $salariof -= 12450;
-            $devengo += (20200 * 0.24);
-            $salariof -= 20200;
-            $devengo += (35200 * 0.3);
-            $salariof -= 35200;
-            $devengo += ($salariof * 0.37);
-        } else if ($salariof < 300000) {
-            $devengo += (12450 * 0.19);
-            $salariof -= 12450;
-            $devengo += (20200 * 0.24);
-            $salariof -= 20200;
-            $devengo += (35200 * 0.3);
-            $salariof -= 35200;
-            $devengo += ($salariof * 0.37);
-            $salariof -= 300000;
-            $devengo += ($salariof * 0.45);
-        }
-        echo $devengo . "<br>";
-        return $salario-$devengo;
-    }
-
-    ?>
+    
 </body>
 
 </html>
