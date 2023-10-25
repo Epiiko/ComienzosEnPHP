@@ -134,7 +134,7 @@
         echo "<h3>Fecha de nacimiento: $fecha_nacimiento</h3>";
         $sql="INSERT INTO usuarios (usuario, nombre, apellido, fecha_nacimiento)
         VALUES ('$usuario', '$nombre', '$apellidos', '$fecha_nacimiento')";
-        $conexion -> query($sql);
+        $conexion_usuarios -> query($sql);
     }
     ?>
 </body>
