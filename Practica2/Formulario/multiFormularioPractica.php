@@ -90,7 +90,7 @@
                     foreach($animales as $animal){
                         list($nombre_animal,$tipo,$cantidad)=$animal;
                         if($nombre_animal==$nombre){
-                            echo "El animal $nombre esta ", comprobarEstado($nombre_animal),"<br><br>";
+                            echo "El animal $nombre esta ", comprobarEstado($cantidad),"<br><br>";
                         }
                     }
                 }
