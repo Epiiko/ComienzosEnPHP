@@ -17,7 +17,9 @@
         $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario'";
         $res = $conexion_usuarios->query($sql);
         if ($res->num_rows === 0) {
-            echo "No existe el usuario";
+            ?>
+            <div class="alert alert-danger">No existe el usuario</div>
+            <?php
         } else {
 
             while ($fila = $res->fetch_assoc()) {
@@ -25,9 +27,16 @@
             }
             $acceso_valido = password_verify($contrasena, $pasword_cifrada);
             if ($acceso_valido) {
-                echo "Bienvenido a la pagina";
+                ?>
+                <div class="alert alert-success">Bienvenido a la pagina</div>  
+                <?php
+                session_start();
+                header('location: index.php');
+                $_SESSION["usuario"]=$usuario;
             } else {
-                echo "La contraseña no es correcta";
+                ?>
+                <div class="alert alert-danger">No coinciden las contraseñas</div>
+                <?php
             }
         }
     }
