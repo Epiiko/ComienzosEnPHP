@@ -23,6 +23,14 @@
         $temp_titulo = depurar($_POST["titulo"]);
         $temp_edad_recomendada = depurar($_POST["edad_recomendada"]);
         $temp_fecha_estreno = depurar($_POST["fecha_estreno"]);
+        $nombre_imagen=$_FILES["imagen"]["name"];
+        $tipo_imagen=$_FILES["imagen"]["type"];
+        $tamano_imagen=$_FILES["imagen"]["size"];
+        $ruta_temp=$_FILES["imagen"]["tmp_name"];
+        $ruta_final = "img/".$nombre_imagen;
+        echo $nombre_imagen. " " . $tipo_imagen . " " . $tamano_imagen. " ". $ruta_temp;
+        move_uploaded_file($ruta_temp, $ruta_final);
+        
 
         #   Validación titulo
         if (!strlen($temp_titulo) > 0) {
@@ -88,7 +96,7 @@
     <div class="container">
         <h1>Insertar pelicula</h1>
         <div class="col-3">
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 <!-- <fieldset> -->
                 <div class="mb-3">
                     <label class="form-label">Id pelicula: </label>
@@ -110,19 +118,23 @@
                     <input class="form-control" type="text" name="edad_recomendada">
                     <?php if (isset($err_edad)) echo $err_edad ?>
                 </div>
+                <div class="mb-3">
+                    <label class="form-label">Imagen</label>
+                    <input type="file" name="imagen" class="form-control">
+                </div>
                 <input class="btn btn-primary" type="submit" value="Registrarse">
                 <!-- </fieldset> -->
             </form>
         </div>
         <?php
-        if (isset($id_pelicula) && isset($titulo) && isset($fecha_estreno) && isset($edad_recomendada)) {
+        if (isset($id_pelicula) && isset($titulo) && isset($fecha_estreno) && isset($edad_recomendada) && isset($ruta_final)) {
 
             echo "<h3>ID: $id_pelicula</h3>";
             echo "<h3>Titulo: $titulo</h3>";
             echo "<h3>Fecha de estreno: $fecha_estreno</h3>";
             echo "<h3>PEGI: $edad_recomendada</h3>";
-            $sql = "INSERT INTO peliculas (id_pelicula, titulo, fecha_estreno, edad_recomendada)
-        VALUES ('$id_pelicula', '$titulo', '$fecha_estreno', '$edad_recomendada')";
+            $sql = "INSERT INTO peliculas (id_pelicula, titulo, fecha_estreno, edad_recomendada, imagen)
+        VALUES ('$id_pelicula', '$titulo', '$fecha_estreno', '$edad_recomendada' , '$ruta_final')";
             $conexion_peliculas->query($sql);
         }
         ?>

@@ -31,6 +31,7 @@
                 <div class="alert alert-success">Bienvenido a la pagina</div>  
                 <?php
                 session_start();
+              
                 header('location: index.php');
                 $_SESSION["usuario"]=$usuario;
             } else {

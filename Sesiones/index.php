@@ -12,13 +12,16 @@
 <body>
     <?php
     session_start();
+    if(!isset($_SESSION_["usario"])){
+        //header('location: login.php');
+        $_SESSION["usuario"]="invitado";
+    }
     $_usuario=$_SESSION["usuario"];
     ?>
     <div class="container">
         <h1>Pagina Principal</h1>
         <h2>Bienvenide <?php echo $_usuario?></h2>
     </div>
-    
 </body>
 
 </html>

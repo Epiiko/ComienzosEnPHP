@@ -21,6 +21,7 @@
                         <th>Titulo</th>
                         <th>Fecha estreno</th>
                         <th>PEGI</th>
+                        <th>Portada</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,10 +33,13 @@
                     <td>" . $fila["id_pelicula"] . "</td>
                     <td>" . $fila["titulo"] . "</td>
                     <td>" . $fila["fecha_estreno"] . "</td>
-                    <td>" . $fila["edad_recomendada"] . "</td>";
-                    echo "</tr>";
-                    }
+                    <td>" . $fila["edad_recomendada"] . "</td>"
                     ?>
+                    <td>
+                        <img src="<?php echo $fila["imagen"]  ?>" alt="<?php echo $fila["titulo"]?>" height="50" width="100">
+                    </td>
+                    </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
