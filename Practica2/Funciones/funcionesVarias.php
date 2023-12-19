@@ -23,7 +23,7 @@ function yenesAEuros($valor)
 {
     return $valor * 0.0063;
 }
-function conversor(int $cantidad, $tipo1, $tipo2)
+function convesor(int $cantidad, $tipo1, $tipo2)
 {
     return match (true) {
         $tipo1 == $tipo2 => "Es la misma divisa",
