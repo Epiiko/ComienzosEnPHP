@@ -30,7 +30,7 @@
                 <tr>
                     <td>{{ $plato->nombre }}</td>
                     <td>{{ $plato->precio }}</td>
-                    <td>{{ $plato->tipo }}</td>
+                    <td>{{ $plato->tipo_plato->tipo}}</td>
                     <td>
                         <form method="GET" action="{{ route('platos.show', ['plato' => $plato->id]) }}">
                             <input type="submit" value="Ver">
