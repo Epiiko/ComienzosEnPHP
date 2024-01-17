@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Bienvenido a trenes</h1>
+    <form action="{{resource("tickets.store")}}" method="post">
+        
+    </form>
 </body>
 </html>

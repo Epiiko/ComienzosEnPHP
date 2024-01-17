@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TicketType;
 use Illuminate\Http\Request;
 
 class TicketTypeController extends Controller
@@ -11,7 +12,7 @@ class TicketTypeController extends Controller
      */
     public function index()
     {
-        return view("/ticketstypes/index");
+        return view("/ticket_types/index", ['ticket_types'=>TicketType::all()]);
     }
 
     /**

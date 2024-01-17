@@ -3,6 +3,8 @@
 use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrainController;
+use App\Http\Controllers\TrainTypeController;
+use App\Http\Controllers\TicketTypeController;
 
 
 /*
@@ -21,5 +23,7 @@ Route::get('/', function () {
 });
 Route::resource("/tickets", TicketController::class);
 Route::resource("/trains", TrainController::class);
+Route::resource("/ticket_types", TicketTypeController::class);
+Route::resource("/train_types", TrainTypeController::class);
  
 
