@@ -12,7 +12,7 @@ class TrainController extends Controller
      */
     public function index()
     {
-        return view ("/trains/index",['trenes'=>Train::all()]);
+        return view ("/trains/index",['trains'=>Train::all()]);
     }
 
     /**
@@ -20,7 +20,7 @@ class TrainController extends Controller
      */
     public function create()
     {
-        //
+        return view ("/trains/create",['trains'=>Train::all()]);
     }
 
     /**

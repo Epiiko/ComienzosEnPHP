@@ -18,12 +18,12 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($trenes as $tren)
+            @foreach ($trains as $train)
                 <tr>
-                    <td>{{$tren->name}}</td>
-                    <td>{{$tren->passengers}}</td>
-                    <td>{{$tren->year}}</td>
-                    <td>{{$tren->train_type->type}}</td>
+                    <td>{{$train->name}}</td>
+                    <td>{{$train->passengers}}</td>
+                    <td>{{$train->year}}</td>
+                    <td>{{$train->train_type->type}}</td>
                 </tr>
             @endforeach
         </tbody>

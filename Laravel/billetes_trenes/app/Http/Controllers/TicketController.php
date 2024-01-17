@@ -14,8 +14,8 @@ class TicketController extends Controller
      */
     public function index()
     {
-    
-       return view ("/tickets/index",['tickets'=>Ticket::all()]);
+
+        return view("/tickets/index", ['tickets' => Ticket::all()]);
     }
 
     /**
@@ -23,7 +23,7 @@ class TicketController extends Controller
      */
     public function create()
     {
-        //
+        return view("/tickets/create", ['tickets' => Ticket::all(), 'trains' => Train::all()], ['ticket_types' => TicketType::all()]);
     }
 
     /**
@@ -31,7 +31,13 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ticket = new Ticket;
+        $ticket->date = $request->input("date");
+        $ticket->price = $request->input("price");
+        $ticket->train_id = $request->input("train");
+        $ticket->ticket_type_id = $request->input("ticket_type");
+        $ticket->save();
+        return redirect("tickets");
     }
 
     /**
