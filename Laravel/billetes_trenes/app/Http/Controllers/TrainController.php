@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Train;
+use App\Models\TrainType;
 use Illuminate\Http\Request;
 
 class TrainController extends Controller
@@ -12,7 +13,7 @@ class TrainController extends Controller
      */
     public function index()
     {
-        return view ("/trains/index",['trains'=>Train::all()]);
+        return view("/trains/index", ['trains' => Train::all()]);
     }
 
     /**
@@ -20,7 +21,7 @@ class TrainController extends Controller
      */
     public function create()
     {
-        return view ("/trains/create",['trains'=>Train::all()]);
+        return view("/trains/create", ['train_types' => TrainType::all()]);
     }
 
     /**
@@ -28,7 +29,13 @@ class TrainController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $train = new train;
+        $train->name = $request->input("name");
+        $train->passengers = $request->input("passengers");
+        $train->year = $request->input("year");
+        $train->train_type_id = $request->input("train_type");
+        $train->save();
+        return redirect("trains");
     }
 
     /**
@@ -36,7 +43,7 @@ class TrainController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view("/trains/show", ['train' => Train::find($id)]);
     }
 
     /**
@@ -44,7 +51,7 @@ class TrainController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view("/trains/edit", ['train' => Train::find($id), 'train_types' => TrainType::all()]);
     }
 
     /**
@@ -52,7 +59,13 @@ class TrainController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $train = Train::find($id);
+        $train->name = $request->input("name");
+        $train->passengers = $request->input("passengers");
+        $train->year = $request->input("year");
+        $train->train_type_id = $request->input("train_type");
+        $train->save();
+        return redirect("trains");
     }
 
     /**

@@ -10,6 +10,10 @@
 
 <body>
     <h1>Crear un nuevo ticket</h1>
+    <form action="{{ route('tickets.index') }}" method="get">
+        <input type="submit" value="Volver a inicio">
+    </form>
+    <br><br>
     <form action="{{ route('tickets.store') }}" method="post">
         @csrf
         <label for="date">Fecha</label>
@@ -29,6 +33,7 @@
                 <option value="{{ $ticket_type->id }}">{{ $ticket_type->type }}</option>
             @endforeach
         </select>
+        <br><br>
         <input type="submit" value="Crear">
     </form>
 </body>

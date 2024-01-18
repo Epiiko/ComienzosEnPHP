@@ -24,6 +24,18 @@
             @endforeach
         </tbody>
     </table>
+    <br>
+    <br>
+    <br>
+    <form action="{{ route('trains.index') }}" method="get" style="display: inline">
+        <input type="submit" value="Ver trenes">
+    </form>
+    <form action="{{ route('ticket_types.index') }}" method="get" style="display: inline">
+        <input type="submit" value="Ver tipo de tickets">
+    </form>
+    <form action="{{ route('tickets.index') }}" method="get" style="display: inline">
+        <input type="submit" value="Ver tickets">
+    </form>
 </body>
 
 </html>
