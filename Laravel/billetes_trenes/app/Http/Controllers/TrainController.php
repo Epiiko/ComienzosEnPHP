@@ -73,6 +73,8 @@ class TrainController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $train=Train::find($id);
+        $train->delete($id);
+        return redirect("trains");
     }
 }
